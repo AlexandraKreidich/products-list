@@ -1,24 +1,36 @@
-import { ProductItem } from '../shared/models/ProductItem'
+import { GENDER } from './../shared/models/Gender';
+import { ProductItem } from '../shared/models/ProductItem';
+
+export type Filter = {
+  searchValue: string,
+  gender: GENDER | null,
+  salePrice: boolean
+}
 
 export type State = {
-  searchValue: string,
+  filter: Filter,
   items: ProductItem[]
 }
 
 export type Action =
   {
-    type: 'setItems';
-    payload: {
-      key: string;
-      value: ProductItem[];
-    };
+    type: 'filter';
   }
   | {
-    type: 'search';
-    payload: {
-      key: string;
-      value: string;
-    };
+    type: 'setItems';
+    payload: ProductItem[]
+  }
+  | {
+    type: 'setSearchValue',
+    payload: string;
+  }
+  | {
+    type: 'setGender',
+    payload: GENDER;
+  }
+  | {
+    type: 'setSalePrice',
+    payload: boolean;
   };
 
 export type UpdateType = React.Dispatch<Action>;

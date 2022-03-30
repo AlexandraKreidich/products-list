@@ -2,7 +2,11 @@ import { createContext } from 'react';
 import { AppContextType, State, UpdateType } from './types';
 
 export const defaultState: State = {
-  searchValue: '',
+  filter: {
+    searchValue: '',
+    gender: null,
+    salePrice: false,
+  },
   items: []
 }
 

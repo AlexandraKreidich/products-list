@@ -9,11 +9,8 @@ export function Search() {
   const handleInput = debounce((value: string) => {
     console.log('Saving data:', value);
     dispatch({
-      type: 'search',
-      payload: {
-        key: 'items',
-        value: value[0]
-      }
+      type: 'setSearchValue',
+      payload: value[0]
     });
   });
 

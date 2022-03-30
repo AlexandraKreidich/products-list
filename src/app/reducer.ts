@@ -1,16 +1,42 @@
+import { filterItems } from './../shared/utilities/filter';
 import { Action, State } from './types';
 
 export function AppReducer(state: State, action: Action): State {
   switch (action.type) {
+    case 'filter':
+      const items = filterItems(state.items, state.filter);
+      return {
+        ...state,
+        items: items
+      }
     case 'setItems':
       return {
         ...state,
-        items: action.payload.value
+        items: action.payload
       }
-    case 'search':
+    case 'setSearchValue':
       return {
         ...state,
-        searchValue: action.payload.value
+        filter: {
+          ...state.filter,
+          searchValue: action.payload
+        }
+      }
+    case 'setGender':
+      return {
+        ...state,
+        filter: {
+          ...state.filter,
+          gender: action.payload
+        }
+      }
+    case 'setSalePrice':
+      return {
+        ...state,
+        filter: {
+          ...state.filter,
+          salePrice: action.payload
+        }
       }
     default:
       throw new Error();
