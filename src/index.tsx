@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { ContextProvider } from './app/contextProvider';
 import App from './components/App';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
@@ -8,7 +9,9 @@ import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ContextProvider>
+      <App />
+    </ContextProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
