@@ -1,0 +1,8 @@
+.container{
+  grid-template-rows: 7rem auto;
+  display: grid;
+  grid-template-areas:
+    "search"
+    "table";
+  min-height: 100vh;
+}

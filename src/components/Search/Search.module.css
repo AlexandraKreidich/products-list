@@ -1,0 +1,7 @@
+.container{
+  grid-area: search;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: 3rem auto;
+}
