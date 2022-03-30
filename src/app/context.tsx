@@ -7,7 +7,8 @@ export const defaultState: State = {
     gender: null,
     salePrice: false,
   },
-  items: []
+  items: [],
+  unknownGenderNumber: 0
 }
 
 export const defaultUpdate: UpdateType = () => defaultState;

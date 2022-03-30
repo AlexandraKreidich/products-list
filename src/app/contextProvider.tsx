@@ -11,7 +11,6 @@ export function ContextProvider({ children }: { children: ReactNode }) {
     })
   }, [state.filter])
 
-
   return (
     <AppContext.Provider value={{ state, dispatch }}>
       {children}

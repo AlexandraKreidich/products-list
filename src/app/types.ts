@@ -9,7 +9,8 @@ export type Filter = {
 
 export type State = {
   filter: Filter,
-  items: ProductItem[]
+  items: ProductItem[],
+  unknownGenderNumber: number
 }
 
 export type Action =
@@ -31,6 +32,9 @@ export type Action =
   | {
     type: 'setSalePrice',
     payload: boolean;
+  } | {
+    type: 'setUnknownGenders',
+    payload: number;
   };
 
 export type UpdateType = React.Dispatch<Action>;

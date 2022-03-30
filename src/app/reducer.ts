@@ -38,6 +38,11 @@ export function AppReducer(state: State, action: Action): State {
           salePrice: action.payload
         }
       }
+    case 'setUnknownGenders':
+      return {
+        ...state,
+        unknownGenderNumber: action.payload
+      }
     default:
       throw new Error();
   }
