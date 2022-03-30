@@ -21,8 +21,9 @@ export type Action =
     };
   };
 
+export type UpdateType = React.Dispatch<Action>;
 
 export type AppContextType = {
   state: State;
-  dispatch: React.Dispatch<any>;
+  dispatch: UpdateType;
 }
