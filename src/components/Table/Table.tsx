@@ -27,7 +27,7 @@ export function Table() {
   const items = state.filteredItems.slice((currentPage - 1) * recordsPerPage, currentPage * recordsPerPage);
   return (
     <div>
-      <table className="table">
+      <table className="table table-hover">
         <thead>
           <tr>
             <th scope="col">Gtin</th>
