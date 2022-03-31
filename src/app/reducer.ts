@@ -7,7 +7,7 @@ export function AppReducer(state: State, action: Action): State {
       const items = filterItems(state.items, state.filter);
       return {
         ...state,
-        items: items
+        filteredItems: items
       }
     case 'setItems':
       return {

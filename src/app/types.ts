@@ -10,6 +10,7 @@ export type Filter = {
 export type State = {
   filter: Filter,
   items: ProductItem[],
+  filteredItems: ProductItem[],
   unknownGenderNumber: number
 }
 

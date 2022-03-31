@@ -7,6 +7,7 @@ export const defaultState: State = {
     gender: null,
     salePrice: false,
   },
+  filteredItems: [],
   items: [],
   unknownGenderNumber: 0
 }
