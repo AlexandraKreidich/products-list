@@ -7,7 +7,6 @@ export function Search() {
   const { state, dispatch } = useContext(AppContext);
 
   const handleInput = debounce((value: string) => {
-    console.log('Saving data:', value);
     dispatch({
       type: 'setSearchValue',
       payload: value[0]
