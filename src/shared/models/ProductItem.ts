@@ -8,6 +8,7 @@ export class ProductItem {
   imageLink: string;
   additionalImageLinks: string[];
   gender!: GENDER | string;
+  priceCurrency: string;
 
   constructor(
     title: string,
@@ -15,6 +16,7 @@ export class ProductItem {
     gender: string,
     price: number,
     salePrice: number,
+    priceCurrency: string,
     imageLink: string,
     additionalImageLinks: string[]) {
     this.title = title;
@@ -22,6 +24,7 @@ export class ProductItem {
     this.gender = gender;
     this.price = price;
     this.salePrice = salePrice;
+    this.priceCurrency = priceCurrency;
     this.imageLink = imageLink;
     this.additionalImageLinks = additionalImageLinks;
   }

@@ -12,30 +12,30 @@ export const ProductItemsService = {
   },
 
   parseCsv: (text: string): ProductItem[] => {
-    const start = performance.now();
     const table = text.split(/\n/).slice(1);
     let productItems: ProductItem[] = [];
     table.forEach(row => {
-      const columns = row.split('"').slice(0, 1);
-      const itemsData = columns[0].split(',');
-      let additionalImages = '';
-      if (columns.length === 2) {
-        additionalImages = columns[1];
+      if (row.length > 0) {
+        const columns = row.split(',');
+        let additionalImages: string[] = [];
+        if (columns.length > 6) {
+          additionalImages = columns.slice(6);
+        }
+        const price = parseFloat(columns[3].split(' ')[0]);
+        const salePrice = parseFloat(columns[4].split(' ')[0]);
+        const item = new ProductItem(
+          columns[0],
+          columns[1],
+          columns[2],
+          price,
+          salePrice,
+          columns[3].split(' ')[1],
+          columns[5],
+          additionalImages
+        );
+        productItems.push(item);
       }
-      const item = new ProductItem(
-        itemsData[0],
-        itemsData[1],
-        itemsData[2],
-        parseFloat(itemsData[3]),
-        parseFloat(itemsData[4]),
-        itemsData[5],
-        additionalImages.split(',')
-      );
-      productItems.push(item);
     })
-
-    console.log(performance.now() - start);
-
     return productItems;
   }
 }
