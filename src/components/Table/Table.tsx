@@ -1,5 +1,6 @@
-import { useContext, useMemo, useState } from 'react';
+import { useContext, useEffect, useMemo, useState } from 'react';
 import { AppContext } from '../../app/context';
+import Pagination from '../Pagination';
 import TableRow from './TableRow';
 
 export function Table() {
@@ -7,21 +8,13 @@ export function Table() {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const recordsPerPage = 100;
 
-  const numPages = useMemo(
-    () => Math.ceil(state.filteredItems.length / recordsPerPage),
-    [state.filteredItems.length]
-  );
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [state.filter])
 
-  const prevPage = () => {
-    if (currentPage > 1) {
-      setCurrentPage(currentPage - 1);
-    }
-  }
 
-  const nextPage = () => {
-    if (currentPage < numPages) {
-      setCurrentPage(currentPage + 1);
-    }
+  const onPageChange = (value: number): void => {
+    setCurrentPage(value);
   }
 
   const items = state.filteredItems.slice((currentPage - 1) * recordsPerPage, currentPage * recordsPerPage);
@@ -43,16 +36,12 @@ export function Table() {
           })}
         </tbody>
       </table>
-      <nav aria-label="Page navigation">
-        <ul className="pagination">
-          <li className="page-item">
-            <button onClick={prevPage} type="button" className="btn btn-light" disabled={currentPage === 1}>Previous</button>
-          </li>
-          <li className="page-item">
-            <button onClick={nextPage} type="button" className="btn btn-light" disabled={currentPage === numPages}>Next</button>
-          </li>
-        </ul>
-      </nav>
+      <Pagination
+        currentPage={currentPage}
+        itemsAmount={state.filteredItems.length}
+        recordsPerPage={recordsPerPage}
+        onPageChange={onPageChange}
+      ></Pagination>
     </div>
   )
 }
