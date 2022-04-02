@@ -28,7 +28,7 @@ export type Action =
   }
   | {
     type: 'setGender',
-    payload: GENDER;
+    payload: GENDER | null;
   }
   | {
     type: 'setSalePrice',

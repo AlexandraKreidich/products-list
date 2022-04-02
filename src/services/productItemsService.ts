@@ -21,8 +21,8 @@ export const ProductItemsService = {
         if (columns.length > 6) {
           additionalImages = columns.slice(6);
         }
-        const price = parseFloat(columns[3].split(' ')[0]);
-        const salePrice = parseFloat(columns[4].split(' ')[0]);
+        const price = parseFloat(columns[4].split(' ')[0]);
+        const salePrice = parseFloat(columns[3].split(' ')[0]);
         const item = new ProductItem(
           columns[0],
           columns[1],

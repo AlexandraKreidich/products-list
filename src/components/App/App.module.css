@@ -1,11 +1,25 @@
 .container{
-  grid-template-rows: 7rem 7rem auto;
+  grid-template-rows: 7rem 6rem auto;
   display: grid;
   grid-template-areas:
-    "search"
-    "filter"
+    "controls"
+    "warning"
     "table";
   min-height: 100vh;
   width: 70%;
   margin: 0 auto;
+}
+
+.controls{
+  display: flex;
+  gap: 2rem;
+  grid-area: controls;
+  margin: 1rem auto;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.appWarning{
+  margin: 1rem 0;
+  grid-area: warning;
 }

@@ -1,10 +1,11 @@
-import { useContext, useEffect, useMemo, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { AppContext } from '../../app/context';
 import Pagination from '../Pagination';
 import TableRow from './TableRow';
+import styles from './Table.module.css';
 
 export function Table() {
-  const { state, dispatch } = useContext(AppContext);
+  const { state } = useContext(AppContext);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const recordsPerPage = 100;
 
@@ -19,7 +20,7 @@ export function Table() {
 
   const items = state.filteredItems.slice((currentPage - 1) * recordsPerPage, currentPage * recordsPerPage);
   return (
-    <div>
+    <div className={styles.container}>
       <table className="table table-hover">
         <thead>
           <tr>
