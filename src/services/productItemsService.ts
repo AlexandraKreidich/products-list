@@ -20,6 +20,7 @@ export const ProductItemsService = {
         let additionalImages: string[] = [];
         if (columns.length > 6) {
           additionalImages = columns.slice(6);
+          additionalImages = additionalImages.map(image => image.trim().replace(/"/, ''));
         }
         const price = parseFloat(columns[4].split(' ')[0]);
         const salePrice = parseFloat(columns[3].split(' ')[0]);
