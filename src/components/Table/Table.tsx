@@ -32,9 +32,9 @@ export function Table() {
           </tr>
         </thead>
         <tbody>
-          {items.map((item, index) => {
+          {items.length > 0 ? items.map((item, index) => {
             return <TableRow item={item} key={index}></TableRow>
-          })}
+          }) : <td colSpan={5}>No items</td>}
         </tbody>
       </table>
       <Pagination

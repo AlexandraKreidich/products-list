@@ -1,6 +1,7 @@
 import { ITableRowProps } from './types';
 import styles from './TableRow.module.css';
 import { useState } from 'react';
+import AsyncImage from '../../AsyncImage';
 
 export function TableRow(props: ITableRowProps) {
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
@@ -12,7 +13,7 @@ export function TableRow(props: ITableRowProps) {
         <th scope="row">{item.gtin}</th>
         <td>
           <div className={styles.title}>
-            <img src={item.imageLink} alt='item' className="img-thumbnail"></img>
+            <AsyncImage src={item.imageLink} isAdditionalImage={false}></AsyncImage>
             <p>{item.title}</p>
           </div>
         </td>
@@ -24,7 +25,7 @@ export function TableRow(props: ITableRowProps) {
         <td colSpan={5}>
           {item.additionalImageLinks.length > 0 ?
             item.additionalImageLinks.map(image =>
-              <img key={image} src={image} alt='item' className={`img-thumbnail ${styles.additionalImage}`}></img>
+              <AsyncImage src={image} key={image} isAdditionalImage={true}></AsyncImage>
             )
             : 'No additional images'}
         </td>
