@@ -9,7 +9,7 @@ export function App() {
   const { state } = useContext(AppContext);
 
   return (
-    <div className={styles.container}>
+    <div data-testid='app-container' className={styles.container}>
       <div className={styles.controls}>
         <Search></Search>
         <Filter></Filter>

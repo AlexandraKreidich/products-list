@@ -30,13 +30,14 @@ export function Filter() {
         onChange={onGenderSelectChange}
         value={state.filter.gender || ''}
       >
-        <option value=''>all genders</option>
+        <option data-testid="select-option" value=''>all genders</option>
         {Object.values(GENDER).map((gender, index) => {
-          return <option value={gender} key={index}>{gender}</option>
+          return <option data-testid="select-option" value={gender} key={index}>{gender}</option>
         })}
       </select>
       <div className={styles.formCheck}>
         <input
+          data-testid="sale-price-check"
           className="form-check-input"
           onChange={onSalePriceChange}
           type="checkbox" checked={state.filter.salePrice}

@@ -18,7 +18,8 @@ export function Search() {
     <input
       type="text"
       className="form-control"
-      id="search"
+      data-testid='search'
+      id='search'
       placeholder="ID/Email"
       onKeyUp={(e: React.KeyboardEvent<HTMLInputElement>) => handleInput(e.currentTarget.value)}></input>
   </div>)

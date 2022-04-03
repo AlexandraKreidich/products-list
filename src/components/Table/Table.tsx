@@ -34,7 +34,7 @@ export function Table() {
         <tbody>
           {items.length > 0 ? items.map((item, index) => {
             return <TableRow item={item} key={index}></TableRow>
-          }) : <td colSpan={5}>No items</td>}
+          }) : <tr><td colSpan={5}>No items</td></tr>}
         </tbody>
       </table>
       <Pagination
