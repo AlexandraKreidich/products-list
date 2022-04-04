@@ -15,6 +15,11 @@ By default, items with all genders are displayed, but is can be changed with the
 
 By clicking on any row, you can expand more images, which are loading asynchronously.
 
+## How to run
+
+### `npm install`
+### `npm start`
+
 ## Available Scripts
 
 In the project directory, you can run:
