@@ -1,17 +1,17 @@
-## Learn More
+## Description
 
 App contains of the main parts:
 
 * **search and filters**
 * **table with products list**
 
-# Search input and Filters:
+### Search input and Filters:
 
 You can input id or item title. Search is case insensitive. Search use debounce to make auto-complete feature possible.
 If sale price checkbox checked items where sale price < price will be displayed.
 By default, items with all genders are displayed, but is can be changed with the help of gender select.
 
-# Table:
+### Table:
 
 By clicking on any row, you can expand more images, which are loading asynchronously.
 
