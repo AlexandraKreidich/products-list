@@ -43,6 +43,11 @@ export function AppReducer(state: State, action: Action): State {
         ...state,
         unknownGenderNumber: action.payload
       }
+    case 'setImage':
+      state.images.set(action.payload.key, action.payload.value);
+      return {
+        ...state
+      }
     default:
       throw new Error();
   }

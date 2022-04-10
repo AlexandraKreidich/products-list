@@ -11,7 +11,8 @@ export type State = {
   filter: Filter,
   items: ProductItem[],
   filteredItems: ProductItem[],
-  unknownGenderNumber: number
+  unknownGenderNumber: number,
+  images: Map<string, string>
 }
 
 export type Action =
@@ -36,6 +37,9 @@ export type Action =
   } | {
     type: 'setUnknownGenders',
     payload: number;
+  } | {
+    type: 'setImage',
+    payload: { key: string, value: string }
   };
 
 export type UpdateType = React.Dispatch<Action>;

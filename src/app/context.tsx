@@ -9,7 +9,8 @@ export const defaultState: State = {
   },
   filteredItems: [],
   items: [],
-  unknownGenderNumber: 0
+  unknownGenderNumber: 0,
+  images: new Map<string, string>()
 }
 
 export const defaultUpdate: UpdateType = () => defaultState;
